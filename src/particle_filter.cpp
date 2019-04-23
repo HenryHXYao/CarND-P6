@@ -173,7 +173,7 @@ void ParticleFilter::resample() {
     int number = distribution(generator);
     new_particles.push_back(particles[number]);
   }
-  particles = new_particles;
+  particles = std::move(new_particles);
 }
 
 void ParticleFilter::SetAssociations(Particle& particle, 
