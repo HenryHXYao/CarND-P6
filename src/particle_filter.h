@@ -24,7 +24,6 @@ struct Particle {
   std::vector<double> sense_y;
 };
 
-
 class ParticleFilter {  
  public:
   // Constructor
@@ -56,16 +55,7 @@ class ParticleFilter {
    */
   void prediction(double delta_t, double std_pos[], double velocity, 
                   double yaw_rate);
-  
-  /**
-   * dataAssociation Finds which observations correspond to which landmarks 
-   *   (likely by using a nearest-neighbors data association).
-   * @param predicted Vector of predicted landmark observations
-   * @param observations Vector of landmark observations
-   */
-  void dataAssociation(std::vector<LandmarkObs> predicted, 
-                       std::vector<LandmarkObs>& observations);
-  
+    
   /**
    * updateWeights Updates the weights for each particle based on the likelihood
    *   of the observed measurements. 
